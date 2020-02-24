@@ -1,0 +1,17 @@
+.img{
+  width:50%;
+}
+.caja{
+  width:40%;
+}
+p{
+  width: 100%;
+}
+.bordeF {
+  width: 10px; height: 10px; border: 2px solid grey; color: black;  border-radius: 20px;
+}
+.centro{
+  margin-left: 38%;
+}
+
+

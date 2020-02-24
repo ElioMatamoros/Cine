@@ -1,0 +1,24 @@
+<div class="fondo">
+  <div class=" sombra-borde container colorCaja bg-white border-0" *ngFor="let p of peliculas">
+    <div class="row mt-xl-3">
+      <div class="col col-md-auto">
+        <div class=" mx-auto caja ">
+          <a [routerLink]="['/pelicula',p.id]"><img src="{{p.foto}}" class="img m-2"></a>
+        </div>
+      </div>
+      <div class="col">
+        <h3 class="">{{p.nombre}}</h3>
+        <div class="">
+          <p><span><span>{{p.director}}</span></span> | <span>{{p.duracion}}</span> | <span>{{p.genero}}</span> |
+            <span>{{p.anyo}}</span> </p>
+        </div>
+        <div class="row" >
+          <div class="col-1 ml-4 mt-4" *ngFor="let h of p.horario">
+            <button class="bg-warning text-white" [routerLink]="['/form',p.id,h]">{{h}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
