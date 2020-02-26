@@ -13,6 +13,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import {FormularioModule} from './formulario/formulario.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {LoginModule} from './login/login.module';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AngularFireAuthModule,
     AngularFireStorageModule,
     BrowserAnimationsModule,
+    LoginModule
 
   ],
   providers: [ServicioPeliculasService],

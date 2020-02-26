@@ -3,13 +3,13 @@
   <div class=" bg-negro cinesur-header1">
     <div class="row">
       <div class="col-md-3">
-        <a [routerLink]="['/']"><img src="https://yelmocines.es/content/img/img-logo-yelmo.png"></a>
+        <a [routerLink]="['home']"><img src="https://yelmocines.es/content/img/img-logo-yelmo.png"></a>
       </div>
     </div>
   </div>
 
   <div class=" cinesur-line">
-
+    <button (click)="onLogout()">Salir</button>
   </div>
 
   <div class=" bg-negro cinesur-header2 hidden-xs hidden-sm ">

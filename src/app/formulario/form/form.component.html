@@ -127,8 +127,19 @@
       </select>
     </div>
     </div>
-    <button type="submit" class="btn btn-primary m-5" (click)="addEntrada()">Enviar</button>
+    <button type="button" class="btn btn-primary" (click)="addEntrada(entradaConfirmada)" data-toggle="modal" data-target="#exampleModal">
+      Realizar Compra
+    </button>
   </form>
 
 </div>
 
+<ng-template #entradaConfirmada>
+  <div class="modal-header jumbotron">
+  </div>
+  <div class="modal-body jumbotron">
+    <p>{{sitio}}</p>
+    <p>{{precio}}</p>
+  </div>
+  <button class="btn btn-primary" (click)="this.modalService.dismissAll()">Cerrar</button>
+</ng-template>
