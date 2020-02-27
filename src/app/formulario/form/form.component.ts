@@ -195,7 +195,6 @@ entrada: Entrada = {
       }
       this.asientos[1] = this.asientos[0] + 1;
       let j;
-
       for ( j = 0 ; j < this.entradas.length ; j++) {
         if (this.entradas[j].horaPelicula === this.entrada.horaPelicula) {
           // tslint:disable-next-line:triple-equals
