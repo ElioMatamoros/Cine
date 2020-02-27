@@ -71,6 +71,8 @@ entrada: Entrada = {
 
     // tslint:disable-next-line:no-conditional-assignment
     if (this.acompanyantes === '0') {
+
+
       this.asientos[0] = Math.floor(Math.random() * ((56 + 1) - 1) + 1);
       let i;
       for ( i = 0 ; i < this.entradas.length ; i++) {
@@ -163,7 +165,7 @@ entrada: Entrada = {
           }
         }
       }
-       this.asientos[2] = this.asientos[1] + 1;
+      this.asientos[2] = this.asientos[1] + 1;
       let h;
       for ( h = 0 ; h < this.entradas.length ; h++) {
         if (this.entradas[h].horaPelicula === this.entrada.horaPelicula) {
@@ -193,6 +195,7 @@ entrada: Entrada = {
       }
       this.asientos[1] = this.asientos[0] + 1;
       let j;
+      
       for ( j = 0 ; j < this.entradas.length ; j++) {
         if (this.entradas[j].horaPelicula === this.entrada.horaPelicula) {
           // tslint:disable-next-line:triple-equals
@@ -230,7 +233,7 @@ entrada: Entrada = {
           }
         }
       }
-      this.sitio = 'Tus sitio en la sala ' + this.entrada.sala  + ' son los asientos ' + this.asientos[0] + ',' + this.asientos[1] + ',' + this.asientos[2] + ',' + this.asientos[3];}
+      this.sitio = 'Tus sitio en la sala ' + this.entrada.sala  + ' son los asientos ' + this.asientos[0] + ',' + this.asientos[1] + ',' + this.asientos[2] + ',' + this.asientos[3]; }
     // tslint:disable-next-line:triple-equals
     if (this.acompanyantes === '4') {
       this.asientos[0] = Math.floor(Math.random() * ((56 + 1) - 1) + 1);
