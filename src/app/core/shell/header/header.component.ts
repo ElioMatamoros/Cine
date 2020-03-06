@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
   onLogout() {
+    this.authService.isAuth();
     this.authService.logoutUser().then(r => {
       this.router.navigate(['']);
     });

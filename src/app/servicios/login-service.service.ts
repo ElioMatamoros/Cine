@@ -46,7 +46,7 @@ export class LoginServiceService {
   }
 
   isAuth() {
-    return this.afsAuth.authState.pipe(map(auth1 => auth));
+    return this.afsAuth.authState.pipe(map(auth1 => console.log(auth)));
   }
 
   private updateUserData(user) {

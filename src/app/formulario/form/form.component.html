@@ -4,7 +4,7 @@
   </div>
   <div class="row p-3 border-bottom ">
     <div class=" col-4 ">
-      <img src="{{pelicula.foto}}" class="img ml-xl-3">
+      <a [routerLink]="['/pelicula',pelicula.id]"><img src="{{pelicula.foto}}" style="border-radius: 20px" class="img ml-xl-3"></a>
     </div>
     <div class="col-md-6 pt-xl-5  ">
       <span>Director: {{pelicula.director}}</span>
@@ -101,45 +101,84 @@
   <form>
     <div class="form-row">
       <div class="col m-1">
-      <label for="hora">Hora de la Pelicula</label>
-      <input type="text" class="form-control" id="hora" value="{{hora}}" disabled>
+      <label for="hora" class="mt-4">Hora de la Pelicula</label>
+      <input type="text" class="mt-4" class="form-control" id="hora" value="{{hora}}" disabled>
       </div>
       <div class="col m-1">
-        <label for="sala">Sala de la Pelicula</label>
+        <label for="sala" class="mt-4">Sala de la Pelicula</label>
         <input type="text" class="form-control" id="sala" value="{{pelicula.sala}}" disabled>
       </div>
     </div>
-    <div class="form-row">
+    <div class="form-row mt-4">
       <div class="col m-1">
       <label for="precio">Precio de la Entrada</label>
       <input type="text" class="form-control" id="precio" value="5 euros" disabled>
       </div>
+      <div class="col m-1">
+        <label for="acompañantes">Acompañantes</label>
+        <select [(ngModel)]="acompanyantes" [ngModelOptions]="{standalone: true}" class="form-control" id="acompañantes"  >
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </div>
     </div>
-    <div class="form-row">
-      <div class="col-md-4 ">
-      <label for="acompañantes">Acompañantes</label>
-      <select [(ngModel)]="acompanyantes" [ngModelOptions]="{standalone: true}" class="form-control" id="acompañantes"  >
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-      </select>
-    </div>
-    </div>
-    <button type="button" class="btn btn-primary" (click)="addEntrada(entradaConfirmada)" data-toggle="modal" data-target="#exampleModal">
+    <button type="button" class="btn btn-warning text-dark mt-4 mb-4" style="margin-left: 43%" (click)="compraEntrada(entradaConfirmada)" data-toggle="modal" data-target="#exampleModal">
       Realizar Compra
     </button>
   </form>
 
+  <div class="  pt-2 border-bottom">
+    <p class="  mt-xl-3 font-weight-bolder  text-center strong upper">Peliculas disponibles</p>
+  </div>
+
+  <footer class="page-footer font-small mdb-color lighten-3 pt-4">
+
+    <!-- Footer Elements -->
+    <div class="container">
+
+      <!--Grid row-->
+      <div class="row">
+
+        <!--Grid column-->
+        <div class="col-lg-2 col-md-6 ml-1 mb-4" style="margin-right:7%;" *ngFor="let p of peliculas">
+          <div class="view overlay z-depth-1-half">
+            <a [routerLink]="['/pelicula',p.id]" ><img src="{{p.foto}}" style="border-radius: 10px" class="img-fluid"
+                                                       alt=""></a>
+            <a [routerLink]="['/pelicula',p.id]">
+              <div class="mask rgba-white-light">{{p.nombre}}</div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--Grid row-->
+
+    </div>
+    <!-- Footer Elements -->
+
+
+
+  </footer>
+
 </div>
 
-<ng-template #entradaConfirmada>
-  <div class="modal-header jumbotron">
+<ng-template #entradaConfirmada >
+  <div class="shadow p-3 mb-5 bg-white rounded modal-content">
+  <div class="modal-header jumbotron ">
+    <span style="margin-left: 28%; font-size: 150%; " >Datos de la Compra</span>
   </div>
   <div class="modal-body jumbotron">
     <p>{{sitio}}</p>
     <p>{{precio}}</p>
+   Número de cuenta:
+    <br>
+    <input type="text" [(ngModel)]="nCredito" ><img src="https://image.flaticon.com/icons/svg/349/349221.svg" style="width: 8%;margin-left: 3%">
+    <button class="btn btn-primary" (click)="compruebaNumero()" style="margin-left: 35% ;margin-top:5%" class="bg-warning text-dark">Realizar Compra</button>
   </div>
-  <button class="btn btn-primary" (click)="this.modalService.dismissAll()">Cerrar</button>
+<div *ngIf="error==true">
+  <p style="background-color: #e9ecef" class="p-3" >{{msgError}}</p>
+</div>
+  </div>
 </ng-template>

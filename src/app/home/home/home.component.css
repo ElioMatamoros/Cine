@@ -1,5 +1,6 @@
 .img{
   width:80%;
+  border-radius: 10px;
 }
 .caja{
   width:40%;
@@ -9,12 +10,14 @@
   -moz-box-shadow: 1px 2px 4px rgba(0,0,0,.5);
   box-shadow: 1px 2px 4px rgba(0,0,0,.5);
 }
-.fondo {
-  background-color: aliceblue;
-}
 body{
   background-color: aliceblue;
 }
 .colorCaja{
   background-color: white;
+  border-radius: 25px;
+}
+.elio{
+  background-image: linear-gradient(rgb(248, 249, 250), #26272b);
+  padding: 25px;
 }

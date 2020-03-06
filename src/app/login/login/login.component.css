@@ -1,4 +1,3 @@
-
 .form-control.login-user {
   border: 0 solid #fff !important;
 }
@@ -17,4 +16,8 @@
 }
 .btn-google{
   background: #dd4b39;
+}
+
+body{
+  background-image: linear-gradient(rgb(248, 249, 250), #26272b);
 }

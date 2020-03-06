@@ -1,5 +1,6 @@
 .img{
   width:50%;
+  border-radius: 10px;
 }
 .caja{
   width:40%;
@@ -8,3 +9,6 @@ p{
   width: 100%;
 }
 
+body{
+  background-color: #F8F9FA;
+}

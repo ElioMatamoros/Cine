@@ -1,26 +1,15 @@
-<div id="head-cinesur" class="container-fluid cinesur-header paddingL0 paddingR0">
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <a href="#" class="navbar-brand">
+    <a [routerLink]="['home']"><img src="https://yelmocines.es/content/img/img-logo-yelmo.png" height="45" alt="CoolBrand"></a>
+  </a>
+  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-  <div class=" bg-negro cinesur-header1">
-    <div class="row">
-      <div class="col-md-3">
-        <a [routerLink]="['home']"><img src="https://yelmocines.es/content/img/img-logo-yelmo.png"></a>
-      </div>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+
+    <div class="navbar-nav ml-auto">
+      <button (click)="onLogout()" class="btn btn-outline-dark ">Salir</button>
     </div>
   </div>
-
-  <div class=" cinesur-line">
-    <button (click)="onLogout()">Salir</button>
-  </div>
-
-  <div class=" bg-negro cinesur-header2 hidden-xs hidden-sm ">
-    <ul class="nav nav-pills nav-justified gibsonT border border-secondary ">
-      <li class="nav-item">
-        <a class="" href="https://www.cinesur.com/es/cartelera">INICIO</a>
-      </li>
-      <li class="nav-item border border-secondary ">
-        <a href="https://www.cinesur.com/es/vose">PELICULAS</a>
-      </li>
-    </ul>
-  </div>
-</div>
-
+</nav>

@@ -12,6 +12,10 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
+  error: boolean;
+  msgError: string;
+
+  nCredito: string;
   peliID: string;
   pelicula: Pelicula;
   peliculas: any;
@@ -52,7 +56,7 @@ entrada: Entrada = {
   }
 
 
-  addEntrada(modal) {
+  addEntrada() {
     this.sitio = '';
     this.precio = '';
     this.asientos = [];
@@ -302,12 +306,29 @@ entrada: Entrada = {
       }
       this.sitio = 'Tus sitio en la sala ' + this.entrada.sala  + ' son los asientos ' + this.asientos[0] + ',' + this.asientos[1] + ',' + this.asientos[2] + ',' + this.asientos[3] + ',' + this.asientos[4]; }
 
-
-    this.modalService.open(modal);
     // @ts-ignore
     this.entrada.asiento = this.asientos;
-    this._service1.addEntrada(this.entrada);
 
 
+  }
+
+  compraEntrada(modal) {
+    this.error = false;
+    this.nCredito = '';
+    this.msgError = '';
+    this.addEntrada();
+    this.modalService.open(modal);
+  }
+  compruebaNumero() {
+    this.error = false;
+    this.msgError = '';
+    if ( this.nCredito === '' || this.nCredito == null || this.nCredito.length !=20 ) {
+      this.error = true;
+      this.msgError = 'El numero de la tarjeta de credito está compuesto de 20 dígitos';
+    } else {
+      this._service1.addEntrada(this.entrada);
+      this.modalService.dismissAll();
+    }
+    this.nCredito = '';
   }
 }

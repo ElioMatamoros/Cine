@@ -3,6 +3,7 @@ import {ServicioPeliculasService} from '../../servicios/servicio-peliculas.servi
 import { ActivatedRoute } from '@angular/router';
 import {Pelicula} from '../../interfaces/Pelicula';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { Router, NavigationEnd } from '@angular/router';
 @Component({
   selector: 'app-pelicula',
   templateUrl: './pelicula.component.html',
